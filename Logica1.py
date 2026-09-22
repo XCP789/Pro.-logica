@@ -43,9 +43,10 @@ def Aprueba(x, y):
 def Reprueba(x, y):
     return (x, y) in relacion_reprueba
 
+#confirma que el dato del profesor sea real y tamboién que la materia que imparte sea la misma que en su universo 
 def Imparte(x, y):
-    if Profesores(x) and Materias(y):
-        return True
+    if Profesores(x):
+        return y in profesores[x] #si x (profesor) tiene la y (materia) que tiene en el universo 
     return False
 
 print("\n1.- Estudiante(x)")
@@ -62,13 +63,18 @@ print(f"x=Maria; Materia('Maria') = {Materias('Maria')}")
 
 print("\n4.- Lugar(x)")
 print(f"x=Biblioteca; Lugar('Biblioteca') = {Lugares('Biblioteca')}")
-print(f"x=Lab. Cómputo; Lugar('Lab. Cómputo') = {Lugares('Lab. Cómputo')}")
+print(f"x=POO; Lugar('POO') = {Lugares('POO')}")
 
 print("\n5.- Aprueba(x, y)")
 print(f"x=Maria; y=Calculo; Aprueba('Maria', 'Calculo') = {Aprueba('Maria', 'Calculo')}")
+print(f"x=Marco; y=Calculo; Aprueba('Marco', 'Calculo') = {Aprueba('Marco', 'Calculo')}")
+
 
 print("\n6.- Reprueba(x, y)")
 print(f"x=marco; y=POO; Reprueba('marco', 'POO') = {Reprueba('marco', 'POO')}")
+print(f"x=Biblioteca; y=POO; Reprueba('Biblioteca', 'POO') = {Reprueba('Biblioteca', 'POO')}")
+
 
 print("\n7.- Imparte(x, y)")
 print(f"x=Prof. tirado; y=POO; Imparte('Prof. tirado', 'POO') = {Imparte('Prof. tirado', 'POO')}")
+print(f"x=Prof. tirado; y=calculo; Imparte('Prof. tirado', 'calculo') = {Imparte('Prof. tirado', 'calculo')}")
